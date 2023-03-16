@@ -22,8 +22,13 @@
     "webpack-dev-server": "^4.8.1"
   },
   "scripts": {
-    "build": "set NODE_ENV=development&&webpack serve --open",
+    "start": "set NODE_ENV=development&&webpack serve --open",
     "dev": "set NODE_ENV=development&&webpack",
     "prod": "set NODE_ENV=production&&webpack"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.6.0",
+    "@splidejs/splide": "^4.1.4",
+    "tiny-slider": "^2.9.4"
   }
 }

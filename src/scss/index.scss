@@ -1,12 +1,14 @@
 @import '../css/reset';
 @import 'mixins';
 
+@import '@splidejs/splide/css';
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8fafd;
-    overflow-x: hidden;
+  font: 500 16px/24px $ffamily;
 }
+
+@import './study';

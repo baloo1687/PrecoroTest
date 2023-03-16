@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -11,9 +11,10 @@ module.exports = {
     mode: mode,
     entry: './src/app.js',
     output: {
-      filename: mode === 'production' ? '[name].[contenthash].js' : '[name].js',
+      filename: mode === 'production' ? 'bundle.[contenthash].js' : 'bundle.js',
       assetModuleFilename: 'assets/[name][ext][query]',
-      clean: true
+      clean: true,
+      path: path.resolve(__dirname, 'dist'),
     },
     target: 'web',
     devtool: 'source-map',
@@ -24,20 +25,12 @@ module.exports = {
         rules: [
             {
                 test: /\.(sa|sc|c)ss$/,
-                use: [
-                    (mode === 'development') ? "style-loader" : MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    {
+                use: [MiniCssExtractPlugin.loader, "css-loader", {
                         loader: "postcss-loader",
                         options: {
                           postcssOptions: {
                             plugins: [
-                              [
-                                "postcss-preset-env",
-                                {
-                                  // Options
-                                },
-                              ],
+                              ["postcss-preset-env", {}],
                             ],
                           },
                         },
@@ -71,16 +64,12 @@ module.exports = {
         ],
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.$': 'jquery',
-      }),
       new HtmlWebpackPlugin({
-        template: "./src/index.html"
+        template: "./src/index.html",
+        inject: 'body',
       }),
       new MiniCssExtractPlugin({
-        filename: (mode === 'development') ? '[name].[contenthash].css' : '[name].css'
+        filename: (mode === 'development') ? 'bundle.css' : 'bundle.[contenthash].css'
       }),
     ],
 }

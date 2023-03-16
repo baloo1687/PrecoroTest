@@ -1,0 +1,25 @@
+.author {
+  display: flex;
+  align-items: center;
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #4545F5;
+    border: 0.5px solid #C7C8D4;
+    margin-right: 12px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+  &__name {
+    font: 600 16px/24px $ffamily;
+    color: #1D2452;
+    margin-bottom: 4px;
+  }
+  &__title {
+    font: 500 14px/20px $ffamily;
+    color: #676F8F;
+  }
+}

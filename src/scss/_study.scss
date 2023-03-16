@@ -1,0 +1,12 @@
+.study {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 120px 0;
+
+  @include lg-tablet {
+    padding: 120px 30px;
+  }
+  
+  @import './tags';
+  @import './slider';
+}
