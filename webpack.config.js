@@ -24,18 +24,21 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(sa|sc|c)ss$/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", {
-                        loader: "postcss-loader",
-                        options: {
-                          postcssOptions: {
-                            plugins: [
-                              ["postcss-preset-env", {}],
-                            ],
-                          },
+              test: /\.(sa|sc|c)ss$/,
+              use: [MiniCssExtractPlugin.loader, "css-loader",
+              {
+                loader: 'resolve-url-loader',
+              }, {
+                      loader: "postcss-loader",
+                      options: {
+                        postcssOptions: {
+                          plugins: [
+                            ["postcss-preset-env", {}],
+                          ],
                         },
-                    },
-                    "sass-loader"],
+                      },
+                  },
+                  "sass-loader"],
             },
             {
               test: /\.(png|svg|jpg|jpeg|gif)$/i,

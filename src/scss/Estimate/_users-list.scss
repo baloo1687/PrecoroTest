@@ -1,0 +1,134 @@
+.users-list {
+  display: none;
+  order: 3;
+  margin: 0 auto;
+  @include sm-tablet {
+    display: block;
+  }
+  &__title {
+    margin-bottom: 12px;
+    text-align: center;
+    font: 500 14px/20px $ffamily;
+    color: #676F8F;
+  }
+  &__placeholder {
+    width: 300px;
+    padding: 12px 16px;
+    padding-right: 87px;
+    font: 500 16px/24px $ffamily;
+    position: relative;
+    border: 1px solid #DDDEE5;
+    border-radius: 8px;
+    color: #DDDEE5;
+    transition: .3s;
+    cursor: pointer;
+    &-users {
+      margin-right: 8px;
+      color: #1D2452;
+    }
+    &-price {
+      font-weight: 600;
+      margin-left: 8px;
+      color: #1D2452;
+    }
+    svg {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      transition: .3s;
+    }
+    &.active {
+      border-color: #A2A2FA;
+      margin-bottom: 8px;
+      svg {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+  &__list {
+    display: none;
+    width: 300px;
+    max-height: 195px;
+    overflow-y: scroll;
+    flex-direction: column;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+    border-radius: 8px;
+    margin-bottom: 40px;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      height: 50px;
+      background: #C7C8D4;
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    &.show {
+      display: flex;
+    }
+  }
+  &__item {
+    padding: 12px 16px;
+    cursor: pointer;
+    &.active {
+      background-color: #EDEEF3;
+      .users-list__count, .users-list__price {
+        color: #4545F5;
+      }
+    }
+    &:hover {
+      .users-list__count, .users-list__price {
+        color: #4545F5;
+      }
+    }
+    &--last {
+      cursor: auto;
+      font: 500 14px/20px $ffamily;
+      text-align: center;
+      color: #676F8F;
+      background-color: #EDEEF3;
+      span {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 4px;
+      }
+      .users-list__link {
+        font: 700 16px/24px $ffamily;
+        border-radius: 20px;
+        color: #4545F5;
+        text-decoration: none;
+        position: relative;
+        padding-right: 20px;
+        svg {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  &__count, &__price {
+    font: 500 16px/24px $ffamily;
+    color: #1D2452;
+    transition: .3s;
+  }
+  &__count {
+    margin-right: 47px;
+    width: 67px;
+    display: inline-block;
+  }
+  &__price {
+    font-weight: 600;
+  }
+}

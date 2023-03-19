@@ -7,9 +7,9 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 120px;
+    width: 85px;
     height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 66%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%);
   }
   &__list {
     display: flex;
@@ -23,9 +23,6 @@
     transition: .2s;
     &:hover {
       color: #4545F5;
-    }
-    &--separate {
-      padding-right: 0;
     }
     &--separate {
       position: relative;

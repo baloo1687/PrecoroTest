@@ -11,7 +11,7 @@ export const tagsSlider = () => {
   });
 };
 
-export const casesTagsSlider = (sliderContainer) => {
+export const casesTagsSlider = sliderContainer => {
   new Splide(sliderContainer, {
     autoWidth: true,
     pagination: false,

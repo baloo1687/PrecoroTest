@@ -1,7 +1,10 @@
 import { tagsSlider, casesSlider } from "./slider";
 import cases from "./cases";
 import tagFilter from "./tagFilter";
+import progressBar from "./progressBar";
+import usersList from "./usersList";
 
+const isMobile = window.innerWidth > 768 ? false : true;
 const casesData = [
   {
     id: 1,
@@ -77,7 +80,18 @@ const casesData = [
     image: '#4ED0FF'
   }
 ];
+const pricing = {
+  USD: 35,
+  EUR: 32,
+  GBP: 29
+}
 
 tagsSlider();
 cases(casesData);
 tagFilter(casesData);
+
+if (isMobile) {
+  usersList(pricing);
+} else {
+  progressBar(pricing);
+}

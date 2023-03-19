@@ -1,0 +1,118 @@
+.progress {
+  margin-top: 46px;
+  position: relative;
+  margin-bottom: 103px;
+  @include sm-tablet {
+    display: none;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90px;
+    &--twink {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 5px;
+      text-align: center;
+      white-space: nowrap;
+      &.active {
+        display: flex;
+      }
+      .progress__cost {
+        font: 700 16px/24px $ffamily;
+        color: #4545F5;
+        position: relative;
+        padding-right: 20px;
+        &::after {
+          position: absolute;
+          content: '';
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url('../../img/s-arrow-right.svg') no-repeat;
+          background-position: center;
+          background-size: contain;
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  &__users-count {
+    font: 500 18px/28px $ffamily;
+    color: #1D2452;
+  }
+  &__cost {
+    font: 600 18px/28px $ffamily;
+    color: #1D2452;
+    background-color: #fff;
+    text-decoration: none;
+  }
+  .noUi-target {
+    height: 6px;
+    background: #DDDEE5;
+    border-radius: 40px;
+    border: 0;
+    box-shadow: none;
+  }
+  .noUi-handle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: #4545F5;
+    box-shadow: none;
+    border: 0;
+    right: -10px;
+    top: -7px;
+    cursor: pointer;
+    &::after, &::before {
+      display: none;
+    }
+  }
+  .noUi-connects {
+    &:after {
+      position: absolute;
+      content: '';
+      width: 3px;
+      background-color: #fff;
+      height: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+    }
+  }
+  .noUi-connect {
+    background: #4545F5;
+  }
+  .noUi-pips {
+    padding: 0;
+    height: 20px;
+    .noUi-value-horizontal {
+      top: 10px;
+      transform: translateX(-50%) translateY(0);
+      font: 500 14px/20px $ffamily;
+      color: #B3B7C7;
+    }
+    .noUi-marker {
+      display: none;
+    }
+  }
+  .noUi-tooltip {
+    height: 100px;
+    bottom: auto;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 0;
+    &.hide {
+      display: none;
+    }
+  }
+}

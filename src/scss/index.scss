@@ -2,6 +2,8 @@
 @import 'mixins';
 
 @import '@splidejs/splide/css';
+@import '../../node_modules/nouislider/dist/nouislider.min.css';
+
 
 * {
   box-sizing: border-box;
@@ -11,4 +13,11 @@ body {
   font: 500 16px/24px $ffamily;
 }
 
-@import './study';
+.separator {
+  width: 100%;
+  height: 1px;
+  background-color: #4545F5;
+}
+
+@import './Study/study';
+@import './Estimate/estimate';

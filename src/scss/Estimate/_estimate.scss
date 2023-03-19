@@ -1,0 +1,48 @@
+.estimate {
+  padding: 40px;
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 200px;
+  @include lg-tablet {
+    max-width: 1080px;
+    padding: 30px;
+  }
+  @include sm-tablet {
+    padding: 20px;
+  }
+  &__title {
+    font: 700 32px/40px $ffamilyLiterata;
+    color: #1D2452;
+    width: 368px;
+    margin-right: 92px;
+    @media (max-width: 1000px) {
+      width: calc(50% - 46px);
+    }
+    @include sm-tablet {
+      width: 100%;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 24px;
+      order: 1;
+    }
+  }
+
+  &__calc {
+    width: calc(100% - 368px - 92px);
+    @media (max-width: 1000px) {
+      width: calc(50% - 46px);
+    }
+    @include sm-tablet {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+  @import './currencies.scss';
+  @import './progress.scss';
+  @import './features.scss';
+  @import './plans.scss';
+  @import './users-list.scss';
+}

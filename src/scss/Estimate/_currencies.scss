@@ -1,0 +1,39 @@
+.currencies {
+  display: flex;
+  gap: 21px;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+  @include sm-tablet {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  &__item {
+    position: relative;
+    &::after {
+      content: '|';
+      position: absolute;
+      right: -13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #DDDEE5;
+    }
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__button {
+    font: 500 14px/20px $ffamily;
+    color: #676F8F;
+    transition: .3s;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    &.active {
+      color: #4545F5;
+    }
+  }
+}

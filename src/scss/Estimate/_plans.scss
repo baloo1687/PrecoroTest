@@ -1,0 +1,125 @@
+.plans {
+  width: calc(100% - 368px - 92px);
+  display: flex;
+  @media (max-width: 1000px) {
+    width: calc(50% - 46px);
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  @include sm-tablet {
+    width: 100%;
+    order: 3;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-top: 40px;
+  }
+  &__item {
+    width: 50%;
+    background: #F7F9FC;
+    border-radius: 8px;
+    padding: 32px 24px;
+    opacity: 0.25;
+    transition: .3s;
+    @media (max-width: 1000px) {
+      width: 100%;
+    }
+    @include sm-tablet {
+      padding: 24px;
+      width: 280px;
+      opacity: 1;
+    }
+    &--large {
+      .plans__price {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    &.active {
+      opacity: 1;
+      .plans__link {
+        pointer-events: all;
+        cursor: pointer;
+      }
+    }
+  }
+  &__title {
+    font: 600 22px/32px $ffamily;
+    color: #1D2452;
+    text-align: center;
+    margin-bottom: 4px;
+    @include sm-tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &__for {
+    display: inline-block;
+    width: 100%;
+    font: 600 18px/28px $ffamily;
+    text-align: center;
+    color: #676F8F;
+    margin-bottom: 24px;
+    @include sm-tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &__price {
+    display: inline-block;
+    width: 100%;
+    font: 700 52px/56px $ffamilyLiterata;
+    text-align: center;
+    color: #1D2452;
+    margin-bottom: 12px;
+  }
+  &__per {
+    font: 500 16px/24px $ffamily;
+    text-align: center;
+    color: #676F8F;
+    margin-bottom: 40px;
+    @include sm-tablet {
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 32px;
+    }
+  }
+  &__link {
+    font: 700 16px/24px $ffamily;
+    color: #FFFFFF;
+    background: #4545F5;
+    border-radius: 20px;
+    padding: 8px 40px 8px 20px;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 34px;
+    pointer-events: none;
+    cursor: default;
+    white-space: nowrap;
+    @include sm-tablet {
+      margin-bottom: 18px;
+      pointer-events: all;
+      cursor: pointer;
+    }
+    svg {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+  &__icon {
+    width: 142px;
+    height: 142px;
+    margin: 0 auto;
+  }
+}

@@ -1,6 +1,6 @@
 import { casesTagsSlider } from "./slider";
 
-const cases = (casesData) => {
+const cases = casesData => {
   const sliderList = document.querySelector('.js-slider-list');
   let slide = null;
 
