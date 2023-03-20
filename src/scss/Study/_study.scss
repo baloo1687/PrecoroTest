@@ -6,6 +6,10 @@
   @include lg-tablet {
     padding: 120px 30px;
   }
+
+  @include phone {
+    padding: 120px 20px;
+  }
   
   @import './tags';
   @import './slider';

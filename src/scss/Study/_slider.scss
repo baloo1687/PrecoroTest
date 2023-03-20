@@ -23,6 +23,9 @@
     justify-content: center;
     align-items: center;
     gap: 126px;
+    @include phone {
+      gap: 95px;
+    }
   }
   &__control {
     width: 32px;
